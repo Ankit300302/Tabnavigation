@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import { View, TextInput, Button, StyleSheet,Text } from 'react-native';
+
+const LoginScreen = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // handle login logic here
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text>
+        App Created by Ankit Singh
+      </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={setUsername}
+        value={username}
+        placeholder="Username"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={setPassword}
+        value={password}
+        placeholder="Password"
+        secureTextEntry={true}
+      />
+      <Button title="Login" onPress={handleLogin} />
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginBottom: 10,
+    paddingHorizontal: 10,
+  },
+});
+
+
+
+export default function App() {
+  return (
+    <LoginScreen />
+    
+
+  );
+}
